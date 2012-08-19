@@ -749,7 +749,7 @@ register_post_type('schedule', array(
 'show_ui' => true,
 'capability_type' => 'post',
 'hierarchical' => false,
-'rewrite' => array('slug' => 'opportunities'),
+'rewrite' => array('slug' => 'schedule'),
 'query_var' => true,
 'menu_position' => 5,
 'supports' => array(

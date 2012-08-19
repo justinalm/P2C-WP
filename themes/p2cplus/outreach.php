@@ -18,9 +18,9 @@ Template Name: Outreach
       <?php query_posts('post_type=outreach&posts_per_page=-1');
                      if (have_posts()) : while (have_posts()) : the_post(); $count++; ?>
                      <div class="g1">
+                     <?php echo the_post_thumbnail('full');?>
                      <h3><?php the_title();?></h3>
-                     <h4><?php echo get_post_meta($post->ID, 'location-specifics', true);?></h4>
-                     <?php echo the_post_thumbnail('full');?>        
+                     <h4><?php echo get_post_meta($post->ID, 'location-specifics', true);?></h4>        
                      <?php
                          global $more;
                          $more = 0;

@@ -1,13 +1,13 @@
 <?php
 /**
- * The template for displaying content in the single-outreach.php template
+ * The template for displaying content in the single-opportunities.php template
  *
  * @package WordPress
  * @subpackage P2C Plus
  * @since P2C Plus 1.0
  */
 ?>
-
+    
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<?php endif; ?>
 		<h3><?php the_title(); ?></h3>
@@ -19,5 +19,5 @@
        <a href="#"><li>Tweet <span class="icon" id="social-buttons">t</span></li></a>         
     </ul>
     </div>
-
+    
     <div class="cf"></div>
