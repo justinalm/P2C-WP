@@ -34,10 +34,10 @@ Template Name: Schedule
     <div class="cf"></div>
 
     <div class="g3">
-      <a href="http://www.eventbrite.com" target="_blank">
-         <div class="reg-button">
-           register now&nbsp;<span class="icon">-</span>
-         </div></a>
-     </div>
+     <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
+        <div class="reg-button">
+          register now&nbsp;<span class="icon">-</span>
+        </div></a>
+    </div>
 
 <?php include("footer.php"); ?>

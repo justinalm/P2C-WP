@@ -12,31 +12,32 @@
       <div class="g1-footer">
 
         <ul class="footer">
-          <a href="/plus/faq/"><li>Got questions? Read the FAQ<span class="icon" id="small">_</span></li></a>
-          <a href="/plus/resourcespromote/"><li>resources / promote<span class="icon" id="small">?</span></li></a>
-          <a href="/plus/schedule/"><li>schedule<span class="icon" id="small">P</span></li></a>
-          <a href="/plus/toronto/home/"><li>P2C+ Toronto Conference<span class="icon" id="small">0</span></li></a>
-          <a href="/plus/toronto/french/home/"><li>Read this site in French<span class="icon" id="small">&oacute;</span></li></a>
-          <a href="#top"><li>Take me to the top<span class="icon" id="small">&igrave;</span></li></a>
+        <a href="/plus/faq/"><li>Got questions? Read the FAQ<span class="icon" id="small">_</span></li></a>
+        <a href="/plus/resourcespromote/"><li>resources / promote<span class="icon" id="small">?</span></li></a>
+        <a href="/plus/schedule/"><li>schedule<span class="icon" id="small">P</span></li></a>
+        <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=124, 'conference1_link', true); ?>"><li><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=124, 'conference1_name', true); ?><span class="icon" id="small">0</span></li></a>
+        <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=124, 'conference_french_link', true); ?>"><li><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=124, 'conference_french_name', true); ?><span class="icon" id="small">&oacute;</span></li></a>
+        <a href="#top"><li>Take me to the top<span class="icon" id="small">&igrave;</span></li></a>
         </ul>
+        
         <br/>
       </div>
       
       <div class="g1-footer">
 
-      <!-- Twitter Feed -->
-      <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
-      <script> new TWTR.Widget({ version: 2, type: 'profile', rpp: 3, interval: 30000, width: 'auto', height: 250, theme: { shell: { background:'transparent', color: '#ffffff' }, tweets: { background: '#004773', color: '#ffffff', links: '#b8b8b8' } }, features: { scrollbar: false, loop: false, live: false, behavior: 'all', profile: false} }).render().setUser('justinalm').start();</script>
+      <?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=126, 'twitter_embed', true); ?>
+      
       </div>
       
       <div class="g1-footer">
-        <a href="http://www.eventbrite.com" target="_blank">
+        <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=127, 'livestream_link', true); ?>" target="_blank">
         <div class="ls-button">
           tune in on Livestream&nbsp;<span class="icon">q</span>
         </div></a>
-        <p class="social">Like <span class="icon" id="social">G</span>
-           Follow <span class="icon" id="social">U</span>
-           Add <span class="icon" id="social">+</span>
+        <p class="social">
+          <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=128, 'footer_facebook', true); ?>" target="_blank" style="color: #ECECEC;">Like <span class="icon" id="social">G</span></a>
+           <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=128, 'footer_twitter', true); ?>" target="_blank" style="color: #ECECEC;">Follow <span class="icon" id="social">U</span></a>
+           <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=128, 'footer_googleplus', true); ?>" target="_blank" style="color: #ECECEC;">Add <span class="icon" id="social">+</span></a>
         </p>
       </div>
       

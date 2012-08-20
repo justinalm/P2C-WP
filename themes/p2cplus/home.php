@@ -9,13 +9,13 @@ Template Name: Home
 <div class="g3">
   <div id="homevideo">
     <div class="vendor">
-      <iframe src="http://player.vimeo.com/video/18554749?title=0&amp;byline=0&amp;portrait=0" width="1140" height="641" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            <?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=119, 'homepagevideo', true); ?>
       </div>
     </div>
 </div>
 
 <div class="g3">
- <a href="http://www.eventbrite.com" target="_blank">
+ <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
     <div class="reg-button">
       register now&nbsp;<span class="icon">-</span>
     </div></a>
@@ -23,45 +23,44 @@ Template Name: Home
   
   <div class="g3">
     <h2 class="vision">our vision <span class="icon">M</span></h2>
-    <p class="headline">P2C+ Conference brings together students from across Canada to inspire and equip them to change the world. Our prayer is that this conference will open your eyes to the explosive possibilities God is holding out to you if you choose to make the decision to live completely for Him! The speakers, seminars and outreach opportunities throughout the week will help you gain a greater understanding of who Jesus is and the impact of the mission He left us, as believers, to go and make disciples of all nations.</p>
+    <p class="headline"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'vision', true); ?></p>
   </div>
 
+
+  <div class="g3-speakers">
+    
   <div class="g-half">
     <h2>speakers + bands <span class="icon">O</span></h2>
-    <p class="second">Greg Sykes lives with his wife and 2 children in the beautiful Niagara Region of Ontario and serves in his local church as a worship leader as well as a realtor with Re/Max Garden City.</p>
+    <p class="second"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'speakers_bands_home', true); ?></p>
   </div>    
 
-  <div class="g-half2">
+  <div class="g-half">
     <h2>workshops <span class="icon">@</span></h2>
-    <p class="second">Seminars provide the opportunity for students to customize their conference experience. We have between 20 and 30 seminars on a range topics. You will have the choice to attend the ones that peak your interest the most.</p>
+    <p class="second"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'workshops_home', true); ?></p>
   </div>
+  </div>
+  
+  <div class="cf"></div>
 
   <div class="g1">
     <h2>outreach <span class="icon">9</span></h2>
-    <p>Outreach is where rubber meets the road for Winter Conference! Here you will take what you’ve learned from speakers and seminars and apply it, as you communicate the gospel to people searching for God’s love and forgiveness.</p>
+    <p><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'outreach_home', true); ?></p>
   </div>
 
   <div class="g1">
     <h2>travel + hotel <span class="icon">J</span></h2>
-    <p>Getting here is ridiculously easy and the best part is, you&rsquo;re staying right downtown, the heart of the city.</p>
-    <p>Hyatt Regency Vancouver<br />
-    Vancouver, British Columbia<br />
-    Dec 28, 2012 – Jan 1, 2013</p>
+    <p><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'travel_and_hotel_home', true); ?></p>
   </div>
 
   <div class="g1">
     <h2>cost <span class="icon">C</span></h2>
-    <p>The cost is low and flexible with options to suit you as an early bird, someone who&rsquo;s just on time, can only come for the day, or our bangin&rsquo; NYE Party!</p>
-    <p>Early Bird = $279.99<br />
-    Regular Bird = $299.99<br />
-    Day Pass = $40 per day<br />
-    New Year's Eve Pass = $20</p>
+    <p><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'cost_home', true); ?></p>
   </div>
 
   <div class="cf"></div>
 
   <div class="g3">
-   <a href="http://www.eventbrite.com" target="_blank">
+   <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
       <div class="reg-button">
         register now&nbsp;<span class="icon">-</span>
       </div></a>

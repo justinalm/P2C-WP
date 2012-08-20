@@ -40,7 +40,7 @@ Fluid Baseline Grid v1.0.0 Designed & Built by Josh Hopkins and 40 Horse, http:/
          <a href="/plus/home/"><img src="/plus/wp-content/themes/p2cplus/images/logo.png"></a>
        </div>
        <div class="logo-full">    
-         <a href="/plus/home/"><img src="/plus/wp-content/themes/p2cplus/images/logo-full.png"></a>
+         <a href="/plus/home/"><img src="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=141, 'header_logo', true); ?>"></a>
        </div>
 
        <div id="nav">

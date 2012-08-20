@@ -16,9 +16,11 @@ Template Name: Workshops
         <?php query_posts('post_type=workshops&posts_per_page=-1');
                        if (have_posts()) : while (have_posts()) : the_post(); $count++; ?>
                        <div class="g1">
-                       <h3><?php the_title();?></h3>
+                         
+                          <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>">
+                          <?php the_title(); ?></h3>
                        <h4><?php echo get_post_meta($post->ID, 'who_when_where', true);?></h4>
-                       <div class="profilepic"><?php echo the_post_thumbnail( 'small' );?></div>        
+                       <div class="profilepic"><?php echo the_post_thumbnail( 'small' );?></div></a>     
                        <?php
                            global $more;
                            $more = 0;
@@ -36,10 +38,10 @@ Template Name: Workshops
         
   
     <div class="g3">
-     <a href="http://www.eventbrite.com" target="_blank">
-        <div class="reg-button">
-          register now&nbsp;<span class="icon">-</span>
-        </div></a>
+    <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
+       <div class="reg-button">
+         register now&nbsp;<span class="icon">-</span>
+       </div></a>
     </div>
     
   </div><!-- End of wrapper -->

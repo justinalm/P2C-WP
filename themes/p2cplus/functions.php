@@ -341,7 +341,7 @@ add_filter( 'excerpt_length', 'twentyeleven_excerpt_length' );
  * Returns a "Continue Reading" link for excerpts
  */
 function twentyeleven_continue_reading_link() {
-	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( 'See more <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) . '</a>';
+	return ' <a href="'. esc_url( get_permalink() ) . '">' . __( '<br/>Check this out <span class="meta-nav">&rarr;</span>', 'twentyeleven' ) . '</a>';
 }
 
 /**
@@ -757,6 +757,67 @@ register_post_type('schedule', array(
 'editor')
 ) );
 
+// Creates Homepage Video post type
+register_post_type('homepage', array(
+'label' => 'Home Page',
+'public' => true,
+'show_ui' => true,
+'capability_type' => 'post',
+'hierarchical' => false,
+'rewrite' => array('slug' => 'homepage'),
+'query_var' => true,
+'menu_position' => 5,
+'supports' => array(
+'title',
+'custom-fields',)
+) );
+
+// Creates Footer post type
+register_post_type('footer', array(
+'label' => 'Footer',
+'public' => true,
+'show_ui' => true,
+'capability_type' => 'post',
+'hierarchical' => false,
+'rewrite' => array('slug' => 'footer'),
+'query_var' => true,
+'menu_position' => 5,
+'supports' => array(
+'title',
+'custom-fields',)
+) );
+
+// Creates Resources and Promotion post type
+register_post_type('randp', array(
+'label' => 'Resources and Promotion',
+'public' => true,
+'show_ui' => true,
+'capability_type' => 'post',
+'hierarchical' => false,
+'rewrite' => array('slug' => 'randp'),
+'query_var' => true,
+'menu_position' => 5,
+'supports' => array(
+'title',
+'custom-fields',)
+) );
+
+// Creates Resources and Promotion post type
+register_post_type('faq', array(
+'label' => 'FAQ',
+'public' => true,
+'show_ui' => true,
+'capability_type' => 'post',
+'hierarchical' => false,
+'rewrite' => array('slug' => 'faq'),
+'query_var' => true,
+'menu_position' => 5,
+'supports' => array(
+'title',
+'custom-fields',
+'editor')
+) );
+
 // Styling for the custom post type icon
 add_action( 'admin_head', 'wpt_portfolio_icons' );
 function wpt_portfolio_icons() {
@@ -804,6 +865,38 @@ function wpt_portfolio_icons() {
         }
     #icon-edit.icon32-posts-opportunities {background: url(/plus/wp-content/themes/p2cplus/images/opportunities-32x32.png) no-repeat;}
     
+    #menu-posts-homepage .wp-menu-image {
+        background: url(/plus/wp-content/themes/p2cplus/images/video-icon.png) no-repeat 6px 6px !important;
+    }
+#menu-posts-homepage:hover .wp-menu-image, #menu-posts-homepage.wp-has-current-submenu .wp-menu-image {
+        background:url(/plus/wp-content/themes/p2cplus/images/video-hover-icon.png) no-repeat 6px 6px !important;
+    }
+#icon-edit.icon32-posts-homepage {background: url(/plus/wp-content/themes/p2cplus/images/video-32x32.png) no-repeat;}
+
+    #menu-posts-footer .wp-menu-image {
+        background: url(/plus/wp-content/themes/p2cplus/images/footer-icon.png) no-repeat 6px 6px !important;
+    }
+#menu-posts-footer:hover .wp-menu-image, #menu-posts-footer.wp-has-current-submenu .wp-menu-image {
+        background:url(/plus/wp-content/themes/p2cplus/images/footer-hover-icon.png) no-repeat 6px 6px !important;
+    }
+#icon-edit.icon32-posts-footer {background: url(/plus/wp-content/themes/p2cplus/images/footer-32x32.png) no-repeat;}
+
+    #menu-posts-randp .wp-menu-image {
+        background: url(/plus/wp-content/themes/p2cplus/images/randp-icon.png) no-repeat 6px 6px !important;
+    }
+#menu-posts-randp:hover .wp-menu-image, #menu-posts-randp.wp-has-current-submenu .wp-menu-image {
+        background:url(/plus/wp-content/themes/p2cplus/images/randp-hover-icon.png) no-repeat 6px 6px !important;
+    }
+#icon-edit.icon32-posts-randp {background: url(/plus/wp-content/themes/p2cplus/images/randp-32x32.png) no-repeat;}
+
+    #menu-posts-faq .wp-menu-image {
+        background: url(/plus/wp-content/themes/p2cplus/images/faq-icon.png) no-repeat 6px 6px !important;
+    }
+#menu-posts-faq:hover .wp-menu-image, #menu-posts-faq.wp-has-current-submenu .wp-menu-image {
+        background:url(/plus/wp-content/themes/p2cplus/images/faq-hover-icon.png) no-repeat 6px 6px !important;
+    }
+#icon-edit.icon32-posts-faq {background: url(/plus/wp-content/themes/p2cplus/images/faq-32x32.png) no-repeat;}
+    
     // These are the teaser icons for the WP Admin Nav
 
         #menu-posts-speakersbands-tease .wp-menu-image {
@@ -840,3 +933,27 @@ function wpt_portfolio_icons() {
     
     </style>
 <?php }
+
+// Increase Excerpt field height
+
+add_action('admin_head', 'excerpt_textarea_height');
+function excerpt_textarea_height() {
+        echo'
+        <style type="text/css">
+                #excerpt{ height:100px; }
+        </style>
+        ';
+}
+
+add_action('admin_head','custom_field_css');
+function custom_field_css() {
+	echo '
+	<style type="text/css">
+		textarea#metavalue {
+			height:100px!important
+		}
+	</style>
+	';
+}
+
+?>

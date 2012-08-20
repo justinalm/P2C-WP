@@ -12,7 +12,7 @@ Template Name: Speakers + Bands
   </div>
 
       <div class="g3-speakers">
-          <?php query_posts('post_type=speakersbands&posts_per_page=4');
+          <?php query_posts('post_type=speakersbands&posts_per_page=-1');
               if (have_posts()) : while (have_posts()) : the_post();?>
               <div class="g-half">
               <?php the_post_thumbnail( 'full' ); ?>
@@ -34,11 +34,11 @@ Template Name: Speakers + Bands
           
   <div class="cf"></div>      
   
-    <div class="g3">
-     <a href="http://www.eventbrite.com" target="_blank">
-        <div class="reg-button">
-          register now&nbsp;<span class="icon">-</span>
-        </div></a>
-    </div>
+  <div class="g3">
+   <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
+      <div class="reg-button">
+        register now&nbsp;<span class="icon">-</span>
+      </div></a>
+  </div>
     
 <?php include("footer.php"); ?>
