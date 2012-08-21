@@ -5,7 +5,7 @@
 <div class="g-half" style="margin: 0;">
   
   <div class="g3">
-    <h2>opportunity <span class="icon">$</span></h2>
+    <h2><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=147, 'opportunities_title', true); ?> <span class="icon">$</span></h2>
   </div>
 
 		      <?php while ( have_posts() ) : the_post(); ?>

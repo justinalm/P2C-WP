@@ -308,11 +308,11 @@ h1 {
 .logo {float: left;}
 
 /* NAV */
-#nav {float: right; width: auto; margin: 0.3em 0 1em 0;}
+#nav {float: right; width: auto; margin: 0.2em 0 1em 0;}
 #nav a li {display: none}
 #nav ul.info {display: block; list-style: none; float: left}
 #nav ul.info a {display: block; list-style: none; float: left}
-#nav ul.info a li {display: block; float: left; width: auto; font-size: 0.75em; margin: 0 0.5em 0 0.5em;}
+#nav ul.info a li {display: block; float: left; width: auto; font-size: 0.75em; margin: 0 0 0 0.5em;}
 
 span.icon#smallmenu {float: none; line-height: 0.7em; padding: 0 0 0 .2em;}
 span.icon#smallmenuhome {float: none; line-height: 0.7em; padding: 0;}
@@ -331,8 +331,8 @@ footer ul li.last {border-bottom: 1px dotted #e5e5e5;}
 
 p.copyright {text-align: center; float: none;}
 
-.profilepic {display:inline-block;float:left; margin: 0 auto; padding:0 1em 0 0;width:45px;}
-.profilepic img {width:45px;}
+.profilepic {display:inline-block;float:left; margin: 0 auto; padding:0 1em 0 0;width:44px;}
+.profilepic img {width:auto;}
 .social-buttons {float: left;}
 
 /* COLUMN GRID */
@@ -360,14 +360,12 @@ p.second {font-size: 120%; padding: 0;}
 p {font-size: 100%; text-align: left; margin-bottom: 0 1.5em 0 0; line-height: 1.25em;}
 
 .logo {display:none;}
-.logo-full {display: block; width:28%; }
+.logo-full {display: block; width:25%;}
 
-/* NAV */
-#nav {float: right; width: 69%; margin: 0.6em 0 1em 1%;}
-#nav ul.info {display: block; list-style: none; float: right;}
+#nav {float: right; width: auto; margin: 0.5em 0 1em 0;}
 
-.profilepic {width:53px;}
-.profilepic img {width:53px;}
+.profilepic {width:59px; margin: 0 0.75em 0 0; padding: 0;}
+.profilepic img {width:auto; margin: 0; padding: 0;}
 
 }
 

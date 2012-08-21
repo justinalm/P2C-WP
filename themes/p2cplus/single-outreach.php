@@ -5,7 +5,7 @@
 <div class="g-half" style="margin: 0;">
   
     <div class="g3">
-      <h2>outreach <span class="icon">9</span></h2>
+      <h2><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=148, 'outreach_title', true); ?> <span class="icon">9</span></h2>
     </div>
     
 				  <?php while ( have_posts() ) : the_post(); ?>

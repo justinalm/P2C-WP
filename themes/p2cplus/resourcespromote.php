@@ -8,7 +8,7 @@ Template Name: Resources + Promotion
 <?php include("header.php"); ?>
 
   <div class="g3">
-      <h2 class="vision">resources &amp; promotion <span class="icon">?</span></h2>
+      <h2 class="vision"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=130, 'resources_promotion_title', true); ?> <span class="icon">?</span></h2>
   </div>
 
   <div class="g-half">

@@ -7,7 +7,7 @@ Template Name: Workshops
 <?php include("header.php"); ?>
 
     <div class="g3">
-      <h2 class="vision">workshops <span class="icon">@</span></h2>
+      <h2 class="vision"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=149, 'workshops_title', true); ?> <span class="icon">@</span></h2>
       <p class="headline"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=86, 'workshop-tease', true); ?></p>
     </div>
 
@@ -35,14 +35,13 @@ Template Name: Workshops
                          } 
                          wp_reset_query();
                          ?>
-        
-  
-    <div class="g3">
-    <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
-       <div class="reg-button">
-         register now&nbsp;<span class="icon">-</span>
-       </div></a>
-    </div>
+                         
+     <div class="g3">
+      <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
+         <div class="reg-button">
+           <?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'register_now_text', true); ?>&nbsp;<span class="icon">-</span>
+         </div></a>
+     </div>
     
   </div><!-- End of wrapper -->
 

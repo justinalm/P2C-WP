@@ -630,7 +630,7 @@ register_post_type('speakersbands', array(
 
 // Creates Opportunities post type
 register_post_type('speakersbands-tease', array(
-'label' => 'SpeakersBands Tease',
+'label' => 'SpeakersBands Header',
 'public' => true,
 'show_ui' => true,
 'capability_type' => 'post',
@@ -663,7 +663,7 @@ register_post_type('workshops', array(
 
 // Creates Workshop Teaser post type
 register_post_type('workshop-tease', array(
-'label' => 'Workshop Tease',
+'label' => 'Workshop Header',
 'public' => true,
 'show_ui' => true,
 'capability_type' => 'post',
@@ -696,7 +696,7 @@ register_post_type('outreach', array(
 
 // Creates Outreach Teaser post type
 register_post_type('outreach-tease', array(
-'label' => 'Outreach Tease',
+'label' => 'Outreach Header',
 'public' => true,
 'show_ui' => true,
 'capability_type' => 'post',
@@ -729,7 +729,7 @@ register_post_type('opportunities', array(
 
 // Creates Opportunities post type
 register_post_type('opportunities-tease', array(
-'label' => 'Opportunities Tease',
+'label' => 'Opportunities Header',
 'public' => true,
 'show_ui' => true,
 'capability_type' => 'post',
@@ -754,7 +754,8 @@ register_post_type('schedule', array(
 'menu_position' => 5,
 'supports' => array(
 'title',
-'editor')
+'editor',
+'custom-fields',)
 ) );
 
 // Creates Homepage Video post type
@@ -816,6 +817,21 @@ register_post_type('faq', array(
 'title',
 'custom-fields',
 'editor')
+) );
+
+// Creates Navigation post type
+register_post_type('navigation', array(
+'label' => 'Navigation',
+'public' => true,
+'show_ui' => true,
+'capability_type' => 'post',
+'hierarchical' => false,
+'rewrite' => array('slug' => 'navigation'),
+'query_var' => true,
+'menu_position' => 5,
+'supports' => array(
+'title',
+'custom-fields',)
 ) );
 
 // Styling for the custom post type icon
@@ -896,6 +912,15 @@ function wpt_portfolio_icons() {
         background:url(/plus/wp-content/themes/p2cplus/images/faq-hover-icon.png) no-repeat 6px 6px !important;
     }
 #icon-edit.icon32-posts-faq {background: url(/plus/wp-content/themes/p2cplus/images/faq-32x32.png) no-repeat;}
+
+    #menu-posts-navigation .wp-menu-image {
+        background: url(/plus/wp-content/themes/p2cplus/images/navigation-icon.png) no-repeat 6px 6px !important;
+    }
+#menu-posts-navigation:hover .wp-menu-image, #menu-posts-navigation.wp-has-current-submenu .wp-menu-image {
+        background:url(/plus/wp-content/themes/p2cplus/images/navigation-hover-icon.png) no-repeat 6px 6px !important;
+    }
+#icon-edit.icon32-posts-navigation {background: url(/plus/wp-content/themes/p2cplus/images/navigation-32x32.png) no-repeat;}
+
     
     // These are the teaser icons for the WP Admin Nav
 
@@ -932,6 +957,7 @@ function wpt_portfolio_icons() {
         #icon-edit.icon32-posts-opportunities-tease {background: url(/plus/wp-content/themes/p2cplus/images/opportunities-32x32.png) no-repeat;}
     
     </style>
+    
 <?php }
 
 // Increase Excerpt field height
@@ -955,5 +981,11 @@ function custom_field_css() {
 	</style>
 	';
 }
+function my_custom_login_logo() {
+    echo '<style type="text/css">
+        h1 a { background-image:url('.get_bloginfo('template_directory').'/images/custom-login-logo.gif) !important; background-size: 310px !important;}
+    </style>';
+}
 
+add_action('login_head', 'my_custom_login_logo');
 ?>

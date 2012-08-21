@@ -7,7 +7,7 @@ Template Name: Speakers + Bands
 <?php include("header.php"); ?>
 
   <div class="g3">
-      <h2 class="vision">speakers + bands <span class="icon">O</span></h2>
+      <h2 class="vision"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=151, 'speakersbands_title', true); ?> <span class="icon">O</span></h2>
       <p class="headline"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=98, 'speakersbands-tease', true); ?></p>
   </div>
 
@@ -37,7 +37,7 @@ Template Name: Speakers + Bands
   <div class="g3">
    <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
       <div class="reg-button">
-        register now&nbsp;<span class="icon">-</span>
+        <?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'register_now_text', true); ?>&nbsp;<span class="icon">-</span>
       </div></a>
   </div>
     

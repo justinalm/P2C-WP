@@ -17,12 +17,12 @@ Template Name: Home
 <div class="g3">
  <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
     <div class="reg-button">
-      register now&nbsp;<span class="icon">-</span>
+      <?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'register_now_text', true); ?>&nbsp;<span class="icon">-</span>
     </div></a>
 </div>
   
   <div class="g3">
-    <h2 class="vision">our vision <span class="icon">M</span></h2>
+    <h2 class="vision"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'vision_title_home', true); ?> <span class="icon">M</span></h2>
     <p class="headline"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'vision', true); ?></p>
   </div>
 
@@ -30,12 +30,12 @@ Template Name: Home
   <div class="g3-speakers">
     
   <div class="g-half">
-    <h2>speakers + bands <span class="icon">O</span></h2>
+    <h2><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'speakers_bands_title_home', true); ?> <span class="icon">O</span></h2>
     <p class="second"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'speakers_bands_home', true); ?></p>
   </div>    
 
   <div class="g-half">
-    <h2>workshops <span class="icon">@</span></h2>
+    <h2><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'workshops_title_home', true); ?> <span class="icon">@</span></h2>
     <p class="second"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'workshops_home', true); ?></p>
   </div>
   </div>
@@ -43,17 +43,17 @@ Template Name: Home
   <div class="cf"></div>
 
   <div class="g1">
-    <h2>outreach <span class="icon">9</span></h2>
+    <h2><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'outreach_title_home', true); ?> <span class="icon">9</span></h2>
     <p><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'outreach_home', true); ?></p>
   </div>
 
   <div class="g1">
-    <h2>travel + hotel <span class="icon">J</span></h2>
+    <h2><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'travel_and_hotel_title_home', true); ?> <span class="icon">J</span></h2>
     <p><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'travel_and_hotel_home', true); ?></p>
   </div>
 
   <div class="g1">
-    <h2>cost <span class="icon">C</span></h2>
+    <h2><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'cost_title_home', true); ?> <span class="icon">C</span></h2>
     <p><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=122, 'cost_home', true); ?></p>
   </div>
 
@@ -62,7 +62,7 @@ Template Name: Home
   <div class="g3">
    <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
       <div class="reg-button">
-        register now&nbsp;<span class="icon">-</span>
+        <?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'register_now_text', true); ?>&nbsp;<span class="icon">-</span>
       </div></a>
   </div>
 

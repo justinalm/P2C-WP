@@ -7,14 +7,16 @@ Template Name: FAQ
 <?php include("header.php"); ?>
 
   <div class="g3">
-      <h2 class="vision">Most Frequently Asked Questions <span class="icon">_</span></h2>
+      <h2 class="vision"><?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=146, 'faq_title', true); ?> <span class="icon">_</span></h2>
     </div>
 
 
     <div class="g3">
       <dl id="accordion">
-        <?php query_posts('post_type=faq&posts_per_page=-1');
-            if (have_posts()) : while (have_posts()) : the_post();?>
+        <?php query_posts('post_type=faq&posts_per_page=-1'); 
+        if (have_posts()) : while (have_posts()) : the_post();?>
+        <?php  if( $post->ID == '146' ) continue; 
+        // post ID 146 - FAQ — Title (DO NOT DELETE THIS POST!) will not show on the FAQ post loop ?>
             <dt><a href=""><?php the_title();?></a></dt>
             <?php
                 global $more;
@@ -34,7 +36,7 @@ Template Name: FAQ
         <div class="g3">
          <a href="<?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'eventbrite_url', true); ?>" target="_blank">
             <div class="reg-button">
-              register now&nbsp;<span class="icon">-</span>
+              <?php global $wp_query; $postid = $wp_query->post->ID; echo get_post_meta($post=120, 'register_now_text', true); ?>&nbsp;<span class="icon">-</span>
             </div></a>
         </div>
     
